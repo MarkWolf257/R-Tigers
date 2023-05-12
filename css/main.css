@@ -1,0 +1,453 @@
+/* WARNING: This website has been styled for desktop only.
+            The styles may not work well on mobile. */
+
+
+/* || FONTS (for quick copy/paste)
+font-family: 'Open Sans', sans-serif;
+font-family: 'Russo One', sans-serif;
+font-family: 'Saira', sans-serif;
+font-family: 'Salsa', cursive;
+font-family: 'Secular One', sans-serif;*/
+
+
+/* || VARIABLES */
+
+:root {
+    --color1: black;
+    --color2: white;
+    --color3: dodgerblue;
+    --color4: rgb(10%, 10%, 10%);
+}
+
+@font-face {
+    font-family: 'SeoulNamsanCB';
+    src: url('../fnt/SNCB.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SeoulNamsanCL';
+    src: url('../fnt/SNCL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* || MEDIA QUERIES */
+
+html {
+    font-size: 50%;
+}
+
+@media only screen and (min-width: 1024px) {
+    html {font-size: 66%;}
+}
+
+@media only screen and (min-width: 1290px) {
+    html {font-size: 71%;}
+}
+
+@media only screen and (min-width: 1370px) {
+    html {font-size: 75%;}
+}
+
+@media only screen and (min-width: 1470px) {
+    html {font-size: 80%;}
+}
+
+@media only screen and (min-width: 1560px) {
+    html {font-size: 90%;}
+}
+
+@media only screen and (min-width: 1740px) {
+    html {font-size: 100%;}
+}
+
+
+@media only screen and (max-width: 1560px) {
+    img[src="img/Picture2.png"] {width: 604px; height: auto}
+    img[src="img/Picture3.png"] {width: 698px; height: auto}
+    iframe[title="R Tiger's Studio in Google Map"] {width: 512px; height: 512px}
+}
+
+
+/* || GENERAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background: var(--color1);
+    color: var(--color2);
+}
+
+main>* {
+    padding: 12rem;
+}
+
+address, section {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+address>*, section>* {
+    margin: 4rem;
+}
+
+h1 {
+    font-family: 'Salsa', cursive;
+    font-size: 6.4rem;
+    font-weight: normal;
+}
+
+section>h2 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    
+    font-family: 'Secular One', sans-serif;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+section>h2::before {
+    position: absolute;
+    z-index: -1;
+    inset: -7.5rem 0 0 0;
+    width: 100%;
+    text-align: center;
+    
+    content: attr(data-text);
+    text-transform: uppercase;
+    color: rgb(10%, 10%, 10%);
+    font-size: 250%;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: 'SeoulNamsanCB', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+}
+
+em {
+    color: var(--color3);
+    font-style: normal;
+}
+
+strong {
+    font-size: 140%;
+    font-weight: 100;
+}
+
+figcaption {
+    font-size: 2rem;
+    margin: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* || TOP HEADER STYLES */
+
+body>header {
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 2;
+    
+    display: flex;
+    background: var(--color1) url(../img/LOGO1.png) no-repeat center left 3rem;
+    background-size: auto 90%;
+}
+
+body>header nav {
+    margin: auto;
+}
+
+body>header li {
+    display: inline-block;
+    margin: 2.4rem 1rem;
+}
+
+body>header a {
+    color: var(--color2);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.2rem;
+}
+
+
+/* || CONTENT HEADER STYLES */
+
+main>header {
+    width: 100%;
+    padding: 24rem 13.5rem;
+    box-sizing: border-box;
+    
+    background: url(../img/Picture1.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main>header>p {
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+
+
+/* || ADDRESS SECTION STYLES */
+
+address {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    font-style: normal;
+}
+
+address>h2 {
+    font-family: 'Russo One', sans-serif;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 4rem;
+}
+
+address>iframe {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+
+/* ABOUT & CLASS SECTION STYLES */
+
+#about, #class {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 7.5rem 1fr;
+}
+
+#about>img, #class>img {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#class>p {
+    font-family: 'Russo One', sans-serif;
+}
+
+
+/* || STAFF STYLES */
+
+#staff {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4.5rem 4.5rem 1fr;
+    background: url(../img/Picture4.jpg) no-repeat center;
+    background-size: cover;
+}
+
+#staff>h2 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+#staff>p {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    text-align: right;
+}
+
+#staff>figure {
+    text-align: center;
+}
+
+#staff img {
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+}
+
+
+/* || PLANS STYLES */
+
+#plans>ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
+}
+
+#plans>ul>li {
+    list-style-type: none;
+    background: rgb(166, 166, 166);
+    color: var(--color1);
+    font-family: 'SeoulNamsanCL', sans-serif;
+    padding: 2rem;
+}
+
+#plans>ul>li:nth-of-type(2) {
+    background: var(--color2);
+    padding: 4rem 2rem;
+}
+
+#plans article {
+    color: inherit;
+}
+
+#plans article * {
+    margin: 1rem;
+}
+
+#plans ul ul {
+    text-align: left;
+}
+
+#plans ul ul>li {
+    list-style-type: "\1f5f9";
+}
+
+#plans strong {
+    font-family: 'Russo One', sans-serif;
+}
+
+#plans button {
+    padding: 1rem;
+    background: var(--color3);
+    border: none;
+    font-family: 'Russo One', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+
+/* || FAQ STYLES */
+
+#faq {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+#faq>h2 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 5rem;
+}
+
+#faq>ol {
+    width: 100%;
+}
+
+#faq li {
+    background: var(--color2);
+    color: var(--color1);
+    font-family: 'Russo One', sans-serif;
+    margin: 2rem;
+    padding: 2rem;
+    position: relative;
+}
+
+#faq li::before {
+    content: "01";
+    background: var(--color3);
+    color: var(--color1);
+    position: absolute;
+    top: 0rem;
+    left: -6rem;
+    width: 6rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#faq li::after {
+    content: " ";
+    background: var(--color1);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 1rem;
+    display: block;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+#faq p {
+    display: none;
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+#faq li:focus>p {
+    display: unset;
+}
+#faq li:focus::after {
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+
+/* || FOOTER STYLES */
+
+body>footer {
+    background: var(--color1);
+    color: var(--color2);
+    font-family: 'Russo One', sans-serif;
+}
+
+body>footer>nav {
+    padding: 0 0 8rem 75%;
+    background:  url(../img/LOGO1.png) no-repeat top 0 left 10%;
+    background-size: auto 80%;
+}
+
+body>footer h2::after {
+    content: " ";
+    display: block;
+
+    height: 1rem;
+    width: 12rem;
+    background: linear-gradient(to left, var(--color1), var(--color3));
+}
+
+body>footer>footer {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--color3);
+    padding: 1rem;
+}
+
+body>footer>footer>nav {
+    background: var(--color1);
+    padding: 1rem;
+    margin: 0 4rem;
+    display: table;
+    border-radius: 1rem;
+}
+
+body>footer li {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 2rem 0;
+}
+
+body>footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body>footer img {
+    margin: 0 1rem;
+}
